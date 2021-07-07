@@ -27,19 +27,20 @@ function App() {
     
     {error ? 
      <div style={{
-       display: 'flex',
-       flexDirection: 'column', 
+       display: 'flex', 
+       flexDirection: 'row',
        justifyContent: 'space-between',
         marginLeft: 50, 
         marginRight: 50, 
         marginTop:100,
+        padding: 5
         
         }}> 
         <div style={{display : loading ? 'none' : 'flex'}}>
             <p style={{ paddingLeft: 16,  marginLeft: 32, color: '#d8000c' }}>
           {'Unexpected error'}
             </p>
-           <button onClick={changeError}>refresh</button>
+           <img onClick={changeError} style={{ paddingLeft: 1,  marginLeft: 1}}   src='https://static3.depositphotos.com/1004430/185/v/600/depositphotos_1859961-stock-illustration-reload-button.jpg' className="logo"/>
         </div>
 
         <p style={{display : loading ? 'block' : 'none'}}>Loading</p>

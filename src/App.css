@@ -2,3 +2,10 @@ h1,
 p {
   font-family: Lato;
 }
+.logo {
+  width: 50px;
+  height: 50px;
+}
+.logo :hover {
+  cursor: pointer;
+}
