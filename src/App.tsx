@@ -17,7 +17,7 @@ function App() {
     setTimeout(()=>{
       setLoading(false)
       setError(false)
-    },3000)
+    },1000)
 
   }
 
@@ -25,22 +25,26 @@ function App() {
     <div style={{display: 'flex', flexDirection: 'column', backgroundColor: '#fafafa'}}>
     <CoverImageView imgSrc={'https://4.img-dpreview.com/files/p/E~TS590x0~articles/3925134721/0266554465.jpeg'} />
     
-    {error ?
+    {error ? 
      <div style={{
-       display: 'flex',   
-        marginLeft: 32, 
-        marginRight: 32, 
+       display: 'flex',
+       flexDirection: 'column', 
+       justifyContent: 'space-between',
+        marginLeft: 50, 
+        marginRight: 50, 
         marginTop:100,
-        padding: 16
         
         }}> 
-      <p style={{ paddingLeft: 16,  marginLeft: 32, color: '#d8000c' }}>
-        {'Unexpected error'}
-      </p>
-      <button onClick={changeError}>refresh</button>
+        <div style={{display : loading ? 'none' : 'flex'}}>
+            <p style={{ paddingLeft: 16,  marginLeft: 32, color: '#d8000c' }}>
+          {'Unexpected error'}
+            </p>
+           <button onClick={changeError}>refresh</button>
+        </div>
 
+        <p style={{display : loading ? 'block' : 'none'}}>Loading</p>
      </div>
-    :  (loading ?  <p>Loading</p>:
+      :  
       <div style={{
         marginLeft: 32, 
         marginRight: 32, 
@@ -54,7 +58,7 @@ function App() {
         <h2>{'Card Title'}</h2>
         <p>{`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`}</p>
       </div>
-    )
+  
       }
   </div>
   );
